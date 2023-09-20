@@ -9,8 +9,7 @@
 ## Install client
 
 ### Debian
-<code>
-wget https://repo.percona.com/apt/percona-release_latest.generic_all.deb
+<code>wget https://repo.percona.com/apt/percona-release_latest.generic_all.deb
 dpkg -i percona-release_latest.generic_all.deb
 apt update
 apt install -y pmm2-client
