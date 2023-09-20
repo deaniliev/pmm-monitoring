@@ -9,12 +9,13 @@
 ## Install client
 
 ### Debian
-<code>wget https://repo.percona.com/apt/percona-release_latest.generic_all.deb
+```bash
+wget https://repo.percona.com/apt/percona-release_latest.generic_all.deb
 dpkg -i percona-release_latest.generic_all.deb
 apt update
 apt install -y pmm2-client
 pmm-admin --version
-</code>
+```
 
 ### Redhat
 <code>
