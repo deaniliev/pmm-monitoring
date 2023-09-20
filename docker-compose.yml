@@ -1,0 +1,18 @@
+version: "3.6"
+services:
+  pmm-server: 
+    image: percona/pmm-server:2
+    container_name: pmm-server
+    volumes:
+      - /opt/pmm-data/:/srv
+    ports:
+      - "443:443"
+#    environment:
+#      GF_SMTP_ENABLED: true
+#      GF_SMTP_HOST: <host>:587
+#      GF_SMTP_USER: <username>
+#      GF_SMTP_PASSWORD: <password>
+#      GF_SMTP_SKIP_VERIFY: false
+#      GF_SMTP_FROM_ADDRESS: <FROM:address>
+#      GF_SMTP_FROM_NAME: "DB Monitoring"
+    restart: unless-stopped
