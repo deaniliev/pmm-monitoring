@@ -18,11 +18,11 @@ pmm-admin --version
 ```
 
 ### Redhat
-<code>
+```bash
 yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm
 yum install -y pmm2-client
 pmm-admin --version
-</code>
+```
 
 ### Manual installation
 1. Visit the Percona Monitoring and Management 2 download page.
@@ -32,22 +32,22 @@ pmm-admin --version
 
 ## Configure client
 1. Create mysql user
-   <code>
+   ```bash
    CREATE USER 'pmm'@'127.0.0.1' IDENTIFIED BY '<b>pass</b>' WITH MAX_USER_CONNECTIONS 10;
-   </code>
+   ```
 2. Grant privileges
    MySQL 8:
-   <code>
+   ```bash
    GRANT SELECT, PROCESS, REPLICATION CLIENT, RELOAD, BACKUP_ADMIN ON *.* TO 'pmm'@'127.0.0.1';
    FLUSH PRIVILEGES;
-   </code>
+   ```
    MySQL 5.7:
-   <code>
+   ```bash
    GRANT SELECT, PROCESS, REPLICATION CLIENT, RELOAD ON *.* TO 'pmm'@'127.0.0.1';
    FLUSH PRIVILEGES;
-   </code>
+   ```
 4. Configure MySQL:
-   <code>
+   ```bash
    slow_query_log=ON
    log_output=FILE
    long_query_time=1
@@ -55,12 +55,12 @@ pmm-admin --version
    log_slow_slave_statements=ON
    max_digest_length=8192
    performance_schema_max_digest_length=8192
-   </code>
+   ```
 5. Restart MySQL
 6. Add Service MySQL:
-   <code>
+   ```bash
    pmm-admin add mysql --username=pmm --host=127.0.0.1 --password=<b>pass</b> --size-slow-logs=2GiB
-   </code>
+   ```
    For mode parameters, see https://docs.percona.com/percona-monitoring-and-management/details/commands/pmm-admin.html#mysql
 
 
