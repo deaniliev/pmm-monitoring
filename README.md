@@ -33,7 +33,7 @@ pmm-admin --version
 ## Configure client
 1. Create mysql user
    ```bash
-   CREATE USER 'pmm'@'127.0.0.1' IDENTIFIED BY '<b>pass</b>' WITH MAX_USER_CONNECTIONS 10;
+   CREATE USER 'pmm'@'127.0.0.1' IDENTIFIED BY 'pass' WITH MAX_USER_CONNECTIONS 10;
    ```
 2. Grant privileges
    MySQL 8:
@@ -59,7 +59,7 @@ pmm-admin --version
 5. Restart MySQL
 6. Add Service MySQL:
    ```bash
-   pmm-admin add mysql --username=pmm --host=127.0.0.1 --password=<b>pass</b> --size-slow-logs=2GiB
+   pmm-admin add mysql --username=pmm --host=127.0.0.1 --password=pass --size-slow-logs=2GiB
    ```
    For mode parameters, see https://docs.percona.com/percona-monitoring-and-management/details/commands/pmm-admin.html#mysql
 
