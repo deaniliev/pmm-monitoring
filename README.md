@@ -57,7 +57,11 @@ pmm-admin --version
    performance_schema_max_digest_length=8192
    ```
 5. Restart MySQL
-6. Add Service MySQL:
+6. Register node:
+   ```bash
+   pmm-admin config --server-insecure-tls --server-url=https://admin:pass@server-hostname-or-ip:443
+   ```   
+7. Add Service MySQL:
    ```bash
    pmm-admin add mysql --username=pmm --host=127.0.0.1 --password=pass --size-slow-logs=2GiB
    ```
