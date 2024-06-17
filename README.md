@@ -2,10 +2,26 @@
 
 ## Install server
 
+### Docker
+
 0. You will need docker installed
 1. copy docker-compose to /opt
 2. do a `docker compose up -d`
 3. change admin password: `docker exec -t pmm-server change-admin-password MySuperStrongPassword`
+
+### Install Dashboard "MySQL Query Performance Troubleshooting (Designed for PMM2)"
+
+1. This plugin requres the following plugins installed:
+
+   - Breadcrumb
+   - Graph (old) Singlestat Table
+   - Text
+
+2. Install and configure "Altinity plugin for ClickHouse"
+
+   - After installing the above plugin go to "Configuration > Data sources" and select newly installed plugin "Altinity plugin for ClickHouse". In "URL" field we add `http://localhost:8123` and save.
+   - Next, we need to import new Dashboard: "Dashboards > + Import", then in field "Import via grafana.com" we enter 12630 and click Load and Import. In the configuration we should select where to place this Dashboard (typically under MySQL), Prometheus Metrics and ClickHouse datasource.
+   - Save and voila.
 
 ## Install client
 
